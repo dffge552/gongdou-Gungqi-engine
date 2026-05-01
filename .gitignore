@@ -1,0 +1,13 @@
+# 編譯產出
+*.exe
+*.o
+*.obj
+
+# 編輯器檔案
+.vscode/
+.idea/
+*.swp
+
+# OS 垃圾檔案
+.DS_Store
+Thumbs.db
