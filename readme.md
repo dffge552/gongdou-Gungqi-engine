@@ -15,6 +15,15 @@
 **對人類勝率：100% · 世界首個宮棋 AI**  
 *100% win rate against humans · World's First Gongqi AI*
 
+## 🌐 線上試玩 · Play Online
+
+👉 [https://gongdou.netlify.app/gongdou.html](https://gongdou.netlify.app/gongdou.html)
+
+---
+
+## 📋 目錄 · Table of Contents
+...
+
 ---
 
 ## 📋 目錄 · Table of Contents
