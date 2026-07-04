@@ -167,8 +167,8 @@ This project provides two ways to play:
 
 確保以下三個檔案在同一目錄：
 - `gongdou.html`
-- `gongqi_core.js` (注意：檔名保持原樣)
-- `gongqi_core.wasm` (注意：檔名保持原樣)
+- `gongqi_core.js`（注意：檔名保持原樣）
+- `gongqi_core.wasm`（注意：檔名保持原樣）
 
 **步驟 2：啟動 HTTP 伺服器**
 
@@ -178,89 +178,104 @@ python -m http.server 8080
 
 # 或 Node.js
 npx http-server -p 8080
-步驟 3：開啟瀏覽器
+```
 
-網址輸入：http://localhost:8080/gongdou.html
+**步驟 3：開啟瀏覽器**
 
-方法二：部署到 Netlify（免費託管）
-將 gongdou.html、gongqi_core.js、gongqi_core.wasm 推上 GitHub
+網址輸入：`http://localhost:8080/gongdou.html`
 
-登入 netlify.com
+---
 
-點 Add new site → Import an existing project → GitHub
+#### 方法二：部署到 Netlify（免費託管）
 
-選擇你的 repository，點 Deploy
+1. 將 `gongdou.html`、`gongqi_core.js`、`gongqi_core.wasm` 推上 GitHub
+2. 登入 [netlify.com](https://netlify.com)
+3. 點 **Add new site** → **Import an existing project** → **GitHub**
+4. 選擇你的 repository，點 **Deploy**
+5. 完成！獲得網址如 `https://gongdou.netlify.app/gongdou.html`
 
-完成！獲得網址如 https://gongdou.netlify.app/gongdou.html
+---
 
-方法三：本地伺服器版（Windows）
-bash
+#### 方法三：本地伺服器版（Windows）
+
+```bash
 # 編譯
 g++ -O2 -std=c++17 -o gongdou_server.exe gongdou_server.cpp -lws2_32
 
 # 執行
 ./gongdou_server.exe 8765
-English
-Method 1: WASM Web Version (Recommended)
-Step 1: Verify Files
+```
+
+---
+
+### English
+
+#### Method 1: WASM Web Version (Recommended)
+
+**Step 1: Verify Files**
 
 Ensure these three files are in the same directory:
+- `gongdou.html`
+- `gongqi_core.js` (keep filename as is)
+- `gongqi_core.wasm` (keep filename as is)
 
-gongdou.html
+**Step 2: Start HTTP Server**
 
-gongqi_core.js (keep filename as is)
-
-gongqi_core.wasm (keep filename as is)
-
-Step 2: Start HTTP Server
-
-bash
+```bash
 # Python 3
 python -m http.server 8080
 
 # or Node.js
 npx http-server -p 8080
-Step 3: Open Browser
+```
 
-Navigate to: http://localhost:8080/gongdou.html
+**Step 3: Open Browser**
 
-Method 2: Deploy to Netlify (Free Hosting)
-Push gongdou.html, gongqi_core.js, gongqi_core.wasm to GitHub
+Navigate to: `http://localhost:8080/gongdou.html`
 
-Log in to netlify.com
+---
 
-Click Add new site → Import an existing project → GitHub
+#### Method 2: Deploy to Netlify (Free Hosting)
 
-Select your repository, click Deploy
+1. Push `gongdou.html`, `gongqi_core.js`, `gongqi_core.wasm` to GitHub
+2. Log in to [netlify.com](https://netlify.com)
+3. Click **Add new site** → **Import an existing project** → **GitHub**
+4. Select your repository, click **Deploy**
+5. Done! Get URL like `https://gongdou.netlify.app/gongdou.html`
 
-Done! Get URL like https://gongdou.netlify.app/gongdou.html
+---
 
-Method 3: Local Server Version (Windows)
-bash
+#### Method 3: Local Server Version (Windows)
+
+```bash
 # Compile
 g++ -O2 -std=c++17 -o gongdou_server.exe gongdou_server.cpp -lws2_32
 
 # Run
 ./gongdou_server.exe 8765
-🎲 遊戲規則 · Game Rules
-重要說明：宮棋的規則在歷史上確實存在，但以下規則描述是基於本專案 AI 實際實作的規則。由於古典宮棋文獻記載有限（王建「宮棋布局不依經」正說明了沒有標準化規則），本專案的規則實現參考了學術考證並進行了完整性補充，以確保遊戲可玩性與 AI 訓練的可行性。
+```
 
-中文
-基本設定
-項目	規則
-棋盤	10 × 10 格點（100 個交叉點）
-棋子	黑棋 50 顆，白棋 50 顆
-遊戲流程	第一階段：布子（輪流放置，填滿棋盤）→ 第二階段：吃子（依序結算）
-勝負判定	終局時吃子數多者獲勝
-一、布子階段
-開局前棋盤為空
+---
 
-雙方輪流在任意空位放置己方棋子
+## 🎲 遊戲規則 · Game Rules
 
-先手為黑棋，後手為白棋
+### 中文
 
-持續布子直到棋盤完全填滿（100 子，雙方各 50 子）
+#### 基本設定
 
+| 項目 | 規則 |
+|:---|:---|
+| 棋盤 | 10 × 10 格點（100 個交叉點）|
+| 棋子 | 黑棋 50 顆，白棋 50 顆 |
+| 遊戲流程 | 第一階段：布子（輪流放置，填滿棋盤）→ 第二階段：吃子（依序結算）|
+| 勝負判定 | 終局時吃子數多者獲勝 |
+
+#### 一、布子階段
+
+- 開局前棋盤為空
+- 雙方輪流在任意空位放置己方棋子
+- 先手為黑棋，後手為白棋
+- 持續布子直到棋盤完全填滿（100 子，雙方各 50 子）
 二、有效棋形（布子階段需形成的連續串）
 在橫、豎、斜任一方向上，連續且完全相鄰的同色棋子：
 
